@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 class Person
 {
@@ -23,8 +23,16 @@ class Program
 {
     static void Main()
     {
-        Person person = new Person("Иван", "Иванов", 30);
-        
+        Console.Write("Введите имя: ");
+        string firstName = Console.ReadLine();
+
+        Console.Write("Введите фамилию: ");
+        string lastName = Console.ReadLine();
+
+        Console.Write("Введите возраст: ");
+        int age = Convert.ToInt32(Console.ReadLine());
+
+        Person person = new Person(firstName, lastName, age);
         person.PrintInfo();
     }
 }
