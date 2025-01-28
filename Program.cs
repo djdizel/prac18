@@ -1,24 +1,32 @@
 ﻿using System;
 
-class Person
+class Address
 {
-    // Поля
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-    public int Age { get; set; }
+    public string Index { get; set; }
+    public string Country { get; set; }
+    public string City { get; set; }
+    public string Street { get; set; }
+    public int House { get; set; }
+    public int Apartment { get; set; }
 
-    // Конструктор
-    public Person(string firstName, string lastName, int age)
+    public Address(string index, string country, string city, string street, int house, int apartment)
     {
-        FirstName = firstName;
-        LastName = lastName;
-        Age = age;
+        Index = index;
+        Country = country;
+        City = city;
+        Street = street;
+        House = house;
+        Apartment = apartment;
     }
 
-    // Метод вывода данных
-    public void PrintInfo()
+    public void PrintAddress()
     {
-        Console.WriteLine($"Имя: {FirstName}, Фамилия: {LastName}, Возраст: {Age}");
+        Console.WriteLine($"Индекс: {Index}");
+        Console.WriteLine($"Страна: {Country}");
+        Console.WriteLine($"Город: {City}");
+        Console.WriteLine($"Улица: {Street}");
+        Console.WriteLine($"Дом: {House}");
+        Console.WriteLine($"Квартира: {Apartment}");
     }
 }
 
@@ -26,10 +34,7 @@ class Program
 {
     static void Main()
     {
-        // Создание объекта
-        Person person = new Person("Иван", "Иванов", 30);
-        
-        // Вывод информации
-        person.PrintInfo();
+        Address myAddress = new Address("123456", "Россия", "Москва", "Тверская", 10, 25);
+        myAddress.PrintAddress();
     }
 }
